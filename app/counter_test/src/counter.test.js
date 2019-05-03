@@ -16,7 +16,11 @@ describe("Counter", () => {
     fireEvent.click(getByText("+"))
     expect(getByTestId("result")).toHaveTextContent("1");
   })
-  it.todo("「ー」ボタンを押すとカウントダウン")
+  it("「ー」ボタンを押すとカウントダウン", () => {
+    const{ getByTestId, getByText } = render(<Counter />);
+    fireEvent.click(getByText("-"))
+    expect(getByTestId("result")).toHaveTextContent("-1");
+  })
 });
 
 
